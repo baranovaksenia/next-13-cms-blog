@@ -13,7 +13,7 @@ export const PostContent = ({ post, isPostPage = false }: PostContentProps) => {
     <div className="">
       {/* tags */}
       <div
-        className={`flex items-center gap-2  text-neutral-400 ${
+        className={`flex items-center flex-wrap gap-2  text-neutral-400 ${
           isPostPage ? "text-sm " : "text-xs @md:text-sm"
         }`}
       >

@@ -32,7 +32,7 @@ const SocialLink = ({
         return <FaLinkedin size={18} />;
       case "github":
         return <FaGithub size={18} />;
-        case "whatsapp":
+      case "whatsapp":
         return <FaWhatsapp size={18} />;
       default:
         return null;
