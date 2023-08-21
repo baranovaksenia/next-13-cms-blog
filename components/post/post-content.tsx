@@ -5,13 +5,18 @@ import { getReadingTime, getRelativeData } from "@/lib/helpers";
 
 interface PostContentProps {
   post: Post;
+  isPostPage?: boolean;
 }
 
-export const PostContent = ({ post }: PostContentProps) => {
+export const PostContent = ({ post, isPostPage = false }: PostContentProps) => {
   return (
     <div className="">
       {/* tags */}
-      <div className="flex items-center gap-1 text-sm">
+      <div
+        className={`flex items-center gap-2  text-neutral-400 ${
+          isPostPage ? "text-sm " : "text-xs @md:text-sm"
+        }`}
+      >
         <div
           className={`font-medium ${
             post.category.title === "Cities"
@@ -29,12 +34,24 @@ export const PostContent = ({ post }: PostContentProps) => {
         <div>{getRelativeData(post.date_created)}</div>
       </div>
       {/* title */}
-      <h2 className="font-medium text-3xl">{post.title}</h2>
+      <h2
+        className={` ${
+          isPostPage
+            ? "text-2xl md:text-3xl lg:text-4xl font-bold"
+            : "@lg:text-3xl @md:text-2xl text-xl font-medium"
+        }`}
+      >
+        {post.title}
+      </h2>
       {/* description */}
-      <p className="leading-snug text-neutral-600">{post.description}</p>
-      <div className="flex items-center gap-2 pt-3">
-        Read More <AiOutlineArrowRight size={16} />
-      </div>
+      <p className="text-base @lg:text-lg leading-snug text-neutral-600">
+        {post.description}
+      </p>
+      {!isPostPage && (
+        <div className="flex items-center gap-2 pt-3">
+          Read More <AiOutlineArrowRight size={16} />
+        </div>
+      )}
     </div>
   );
 };

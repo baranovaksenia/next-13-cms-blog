@@ -16,9 +16,9 @@ export const PostCard = ({
 }: PostCardProps) => {
   return (
     <Link
-      className={` ${
+      className={`@container ${
         layout === "horizontal"
-          ? "grid md:grid-cols-2 items-center gap-10"
+          ? "grid grid-col-1 md:grid-cols-2 items-center gap-10"
           : "space-y-10"
       }
 	  `}
@@ -27,7 +27,7 @@ export const PostCard = ({
       {/* post image */}
       <Image
         className={`rounded-md w-full object-cover object-center max-h-[300px] ${
-          reverse ? "order-last" : ""
+          reverse ? "md:order-last" : ""
         }`}
         alt={post.title}
         src={post.image}

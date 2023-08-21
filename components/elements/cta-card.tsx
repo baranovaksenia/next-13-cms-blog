@@ -25,7 +25,7 @@ function CTACard() {
         <form className="flex items-center w-full gap-2 mt-6">
           <input
             placeholder="Write your email"
-            className="w-full px-3 py-2 text-base rounded-md outline-none md:w-auto placeholder:text-sm bg-white/80 focus:ring-2 ring-neutral-600"
+            className="w-full md:w-auto px-3 py-2 text-base rounded-md outline-none  placeholder:text-sm bg-white/80 focus:ring-2 ring-neutral-600"
           />
           <button className="px-3 py-2 rounded-md whitespace-nowrap bg-neutral-900 text-neutral-200">
             Sign Up
